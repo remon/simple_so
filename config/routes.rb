@@ -1,4 +1,4 @@
-AuthSimpleSocial1::Application.routes.draw do
+SimpleSocial1::Application.routes.draw do
   
   
 
