@@ -1,0 +1,51 @@
+<div id="countrynote">
+<% if logged_in?%>
+<%unless @country.users.include?current_user%>
+<%=form_for(@traveling) do |f|%>
+<%=f.hidden_field :country_id,{:value=>@country.id}%>
+<%=f.hidden_field :user_id,{:value=>current_user.id}%>
+  <p> <%= f.radio_button :visited, true%>I was there before</p>
+  
+<p><%= f.radio_button :visited, false %>I want to go there </p>
+<%=f.date_select :visited_at%>
+<%=f.submit%>
+<% end %>
+<%else %>
+<% for traveling in current_user.travelings %>
+<%if traveling.country ==@country %>
+<%= link_to "delete",traveling,:method=>:delete%>
+<% end %>
+<% end %>
+<% end %>
+<% end %>
+</div>
+<%= image_tag @country.photo.url(:medium) %>
+<p>
+  <b>Name:</b>
+  <%= @country.name %>
+</p>
+
+<p>
+  <b>About:</b>
+  <%= @country.about %>
+</p>
+<% if @country.users.include?current_user%>
+<%= render :file=>"statuses/new"%>
+<% end%>
+</br>
+
+<div id="constatus">
+<% @country.statuses.each do |status| %>
+<%= status.body %>
+<% end%>
+</div>
+</br>
+<% if logged_in?%>
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<% end %>
+<%= link_to 'Back', countries_path %>
+<h2>country visitors</h2>
+<% for user in @country.users%>
+<%=  link_to user.profile.name,:controller => "profiles", :action => "show",:id=>user.profile %>
+<%=link_to image_tag(user.profile.photo.url(:thumb)),:controller => "profiles", :action => "show",:id=>user.profile%>
+<% end %>

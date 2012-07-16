@@ -1,0 +1,7 @@
+<% if @country.users.include?current_user%>
+<p> you visited 
+	<%=@country.name %>   before</p> 
+
+	<% else %>
+<%= link_to "I was there",travelings_path(:user_id=>current_user,:country_id=>@country),:method=>:post%>
+<% end %>

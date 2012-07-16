@@ -1,0 +1,29 @@
+<h1>Listing countries</h1>
+<table>
+  <tr>
+  	<th>   </th>
+    <th>Name</th>
+    <th>About</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @countries.each do |country| %>
+  <tr>
+  	<td> <%=link_to image_tag(country.photo.url(:thumb)),country %></td>
+    <td><%=link_to country.name,country %></td>
+    <td><%= country.about %></td>
+    <% if logged_in?%>
+    <td><%= link_to 'Edit', edit_country_path(country) %></td>
+    <td><%= link_to 'Destroy', country, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% unless country.users.include?current_user%>
+<td><%= button_to "I was there",travelings_path(:user_id=>current_user,:country_id=>country),:method=>:post%></td>
+<% end %>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Country', new_country_path %>

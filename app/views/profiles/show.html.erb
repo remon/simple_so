@@ -1,0 +1,78 @@
+
+
+<div id="prphoto">
+	
+<%= image_tag @profile.photo.url(:medium) %>
+<p>	
+</div>
+</br>
+<p>
+  <b>Name:</b>
+  <%= @profile.name %>
+</p>
+
+<% if logged_in?%>
+	<% unless current_page?current_user.profile or current_user.friends.include?@profile.user %>
+	<%= link_to "add as a friend",friendships_path(:friend_id=>@profile.user),:method=>:post%>
+<% end %>
+<% end%>
+<p>
+  <b>Looking for:</b>
+  <%= @profile.looking_for %>
+</p>
+
+  <b>Birthday:</b>
+  <%= @profile.birthday %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @profile.user.email %>
+</p>
+
+<p>
+  <b>About:</b>
+  <%= @profile.about %>
+</p>
+<%if logged_in?%>
+<% if @profile.prowned_by? current_user %>
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <td><%= link_to 'Deactivate', @profile, :confirm => 'Are you sure?', :method => :delete %></td>
+<%= link_to 'Back', profiles_path %>
+<% end %>
+
+
+<% end %>
+</br>
+
+<% @user.articles.each do |article| %>
+<div id="article">
+<%=link_to image_tag(article.user.profile.photo.url(:thumb)),profile_path(article.user.profile) %>
+  <%=link_to article.user.profile.name ,profile_path(article.user.profile)%> 
+ wrote about <span class="posted_at"><%= time_ago_in_words(article.created_at) %> ago.
+<%=link_to article.body,article %>
+
+<%= link_to "add new comment",new_article_comment_path(article)%>
+<%= render article.comments%>
+<% end %>
+
+
+
+</div>
+</div>
+<h4>countries list</h4>
+<ul>
+<% for country in @user.countries%>
+<li><%=link_to image_tag(country.photo.url(:thumb)),country %><%= link_to country.name,country%></li>
+</li>
+<% end %>
+</ul>
+
+
+<h4>Friends list</h4>
+<ul>
+<% for user in @user.friends%>
+<li><%=link_to user.profile.name,:controller => "profiles", :action => "show",:id=>user.profile %></li>
+<% end %>
+</ul>
+

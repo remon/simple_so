@@ -1,0 +1,299 @@
+/*
+
+*= require_tree .
+*/
+
+*{
+margin: 0 auto;
+}
+body {
+	margin: 0;
+	padding: 0;
+	color: #7c7970;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+	line-height: 1.4em; 
+	background-color: #c9bda7; 
+	background-image: url("templatemo_body.jpg");
+	background-repeat: repeat;
+}
+body, p, ol, ul, td {
+font-family: verdana, arial, helvetica, sans-serif;
+font-size: 13px;
+line-height: 18px;
+}
+pre {
+background-color: #eee;
+padding: 10px;
+font-size: 11px;
+}
+p {
+padding: 5px;
+}
+a {
+color:#D95E16;
+padding:0 2px;
+text-decoration:none;
+}
+a:hover {
+background-color:#FF813C;
+color:#FFFFFF;
+}
+.notice { color: green; }
+.alert { color: red; }
+#header, #main, #footer {
+width: 800px;
+}
+#header {
+font-family:"Myriad Web Pro",Helvetica,Arial,sans-serif;
+letter-spacing: 1px;
+border-bottom: 5px solid #333333;
+color:#333333;
+padding: 15px 0;
+height: 35px;
+}
+
+#prphotocomment{
+margin:0.1px;
+  border:0.1px outset;
+  height:30px;
+  width:28px;
+  float:left;
+}
+#prphoto{
+margin:2px;
+  border:1px solid #0000ff;
+  height:auto;
+  width:auto;
+  float:left;
+  text-align:center;
+}
+#header img{
+margin:0.1px;
+  border:0.1px solid;
+  height:38px;
+  width:38px;
+  float:none;
+  
+ }
+ #articleuserarea img {
+ margin:0.1px;
+  border:0.1px solid red;
+  height:22px;
+  width:22px;
+  float:none;	
+ }
+#header #user_bar {
+float: right;
+font-size: 10px;
+}
+#footer {
+border-top: 5px solid #C1C1C1;
+margin-top: 10px;
+clear:both;
+padding: 10px 0;
+text-align: center;
+font-size: 11px;
+}
+#header h1 {
+padding-top: 14px;
+float: left;
+font-size: 30px;
+}
+#header h1 a{
+color: black;
+}
+#header h1 a:hover {
+background-color: white;
+color: black;
+border-bottom: 4px solid #ccc;
+}
+#header p {
+float: right;
+}
+#header a {
+float: left;
+font-size :18 px;
+color :green;
+}
+#main h1 {
+font-size: 16px;
+border-bottom: 1px solid #bbb;
+margin-bottom: 10px;
+}
+#main table{
+margin: 0;
+}
+#main form{
+text-align: left;
+}
+#main form input:focus{
+background-color:#66CCCC;
+}
+#main form br{
+display: none;
+float: left;
+}
+#main form label {
+width: 150px;
+display: block;
+text-align: right;
+padding-right: 10px;
+float: left;
+line-height: 21px;
+background-color: #F0F0F0;
+border: 2px solid #ccc;
+margin-right: 10px;
+}
+#main form label.check_box_label {
+width: auto;
+display: inline;
+text-align: inherit;
+padding-right: 10px;
+line-height: 21px;
+background-color: #FFF;
+border: none;
+}
+#main form .field, #main form .actions {
+padding-top: 10px;
+clear: both;
+}
+
+#main form input[type=text], #main form input[type=password], #main form textarea {
+float: left;
+font-size: 14px;
+width: 250px;
+padding: 2px;
+border: 2px solid #ccc;
+}
+#main form input[type=checkbox] {
+margin: 4px;
+float: left;
+}
+#main form textarea {
+height: 30px;
+width: 100 px;
+}
+#main form input[type=submit] {
+margin-left: 175px;
+float:left;
+margin-right: 10px;
+margin-bottom: 10px;
+}
+#article{
+	background: none repeat scroll 0% 0% rgb(243, 243, 243);
+border: 1px solid rgb(221, 221, 221);
+width :600px;
+padding:5px 5px 5px 20px;
+margin: 20px 0px
+
+}
+#comment {
+
+font-family:Tahoma;
+background: none repeat scroll 0% 0% rgb(243, 243, 243);
+border: 1px solid rgb(221, 221, 221);
+width :450px;
+padding:5px 5px 5px 20px;
+text-align:justify;
+
+}
+#comment h3 {
+	font-size :20px;
+	color:black;
+}
+#main{
+	width: 700px;
+	padding: 0 48px; 
+	margin: 0 auto;
+background: #efefef;
+  font: 16px "Georgia", sans-serif;
+  line-height: 200%;
+  color: #444;
+}
+#main h3 {
+padding-top: 10px;
+height: 20px;
+}
+#main h3 .actions{
+display:none;
+font-weight: normal;
+font-size: 10px;
+}
+#main h3:hover .actions{
+display: inline;
+.fieldWithErrors {
+display:table;
+float:left;
+margin:0;
+width:100px;
+margin-right: 10px;
+}
+#main form .fieldWithErrors label{
+border: 2px solid red;
+margin-right: 0px;
+}
+#main form .fieldWithErrors input, #main form .fieldWithErrors textarea{
+width: 250px;
+border: 2px solid red;
+}
+#error_explanation {
+width: 413px;
+border: 2px solid red;
+padding: 7px;
+padding-bottom: 12px;
+margin-bottom: 20px;
+background-color: #CC0000;
+margin: 0;
+}
+#errorExplanation h2 {
+text-align: left;
+font-weight: bold;
+padding: 5px 5px 5px 15px;
+font-size: 12px;
+margin: -7px;
+background-color: #c00;
+color: #fff;
+}
+#errorExplanation p {
+color: #333;
+margin-bottom: 0;
+padding: 5px;
+margin: 0;
+}
+#errorExplanation ul li {
+font-size: 12px;
+list-style: square;
+}
+#countrynote p {
+font-size :14 px;
+color :blue;
+border:solid red;
+font-family: Arial, Helvetica, sans-serif;
+background-color: red;
+}
+#constatus {
+border:2px solid;
+border-radius:25px;
+-moz-border-radius:25px; /* Firefox 3.6 and earlier */
+-webkit-border-radius:25px;
+}
+#status h3 {
+color :red;
+}
+#articleuserarea  span {
+	background: none repeat scroll 0% 0% rgb(243, 243, 243);
+border: 1px solid rgb(221, 221, 221);
+width :100px;
+padding:5px 5px 5px 20px;
+margin: 20px 0px
+}
+#comments{
+font-family:Tahoma;
+background: none repeat scroll 0% 0% rgb(243, 243, 243);
+border: 1px solid rgb(221, 221, 221);
+width :450px;
+padding:2px 2px 5px 20px;
+text-align:justify;
+
+}

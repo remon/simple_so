@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Remon Blog</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="header">
+		<%= link_to "Home",root_path %>
+		<% unless current_page?countries_path %>
+		<%= link_to "Countries",countries_path %>
+		<% end %>
+		<%unless current_page?profiles_path %>
+		<%= link_to "Travellers",profiles_path %>
+		<% end %>
+	
+		<div id="user_bar">
+			<% if logged_in?%>
+			<% unless current_user.profile.blank? %>
+			<%= link_to current_user.profile.name,profile%>
+			<%=link_to image_tag(current_user.profile.photo.url(:thumb)),profile %>
+			<% else %>
+			<%= link_to "new profile",new_profile_path(profile)%>
+			<% end %>
+			<%= link_to "new post",new_article_path %>
+			<%= link_to "edit ur password",edit_user_path(current_user)%>
+			<%= link_to "logout",logout_path,:confirm=>"are you want to sign out ?",:method=>:delete %>
+			<% else %>
+			<% unless current_page?register_path %>
+			<%= link_to "register",register_path%>
+			<% end %>
+			<% unless current_page?login_path%>
+			<%= link_to "login",login_path %>
+			<% end %>
+			<% end %>
+			</div>
+			</div >
+
+<div id="main">
+	<%= content_tag(:p, notice, :class => 'notice') if notice.present? %>
+<%= content_tag(:p, alert, :class => 'alert') if alert.present? %>
+<%= yield %>
+</div>
+<div id="footer">
+A simple social network built by 
+<%= link_to "Remon", profile_path(:id=>1) %></a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<%= form_for([@country, @country.statuses.new]) do |f| %>
+<% if logged_in?%>
+<div id="prphotocomment">
+<%=image_tag current_user.profile.photo.url(:thumb)%>
+
+</div>
+<div class="fieldcomment">	
+<%= f.label :body,"Add your post" %><br />
+<%= f.text_area :body,:rows=>1%>
+</div>
+</br>
+
+</br>
+<div class="actions">
+<%= f.submit 'Post' %>
+</div>
+<% end %>
+<% end %>

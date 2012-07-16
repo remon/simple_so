@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+egypt:
+  name: "Egypt"
+  about: "best country ever "
+
+libya:
+  name: "libya"
+  about: "amaziing country"

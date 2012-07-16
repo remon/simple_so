@@ -1,0 +1,6 @@
+<%= render @article %>
+<h3> comments </h3>
+<div id="comments">
+	<%= render @article.comments%>
+	</div>
+	<%=render :file=>"comments/new" %>

@@ -1,0 +1,29 @@
+class TravelingsController < ApplicationController
+  def create
+    @traveling= current_user.travelings.build(:country_id=>params[:country_id])
+
+    respond_to do |format|
+      if @traveling.save
+        format.html { redirect_to country_path(:id=>@traveling.country) }
+        #format.json { render :json => @friendship, :status => :created, :location => @friendship }
+      else
+       flash[:error] = "Unable to add friend"
+       redirect_to current_page
+
+    end
+    end 
+  end
+
+
+  def destroy
+    @traveling = current_user.travelingss.find(params[:id])
+    @traveling.destroy
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      #format.json { head :no_content }
+    end
+  end
+end
+
+

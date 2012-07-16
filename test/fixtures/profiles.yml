@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  name: "remo"
+  looking_for: MyString
+  birthday: 2012-04-26
+  email: "remon@yahoo.com"
+  about: "web developer"
+
+two:
+  user_id: 1
+  name: MyString
+  looking_for: MyString
+  birthday: 2012-04-26
+  email: MyString
+  about: MyText

@@ -1,0 +1,9 @@
+<%= div_for status do %>
+<h3>
+	<%=status.body%>
+	 &gt; said:
+<span class='actions'>
+<%= link_to 'Delete', country_status_path(@country,status), :confirm => 'Are you sure?', :method => :delete %>
+</span>
+</h3>
+<% end %>

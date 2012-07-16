@@ -1,0 +1,35 @@
+<h1>Listing profiles</h1>
+
+<table id="profiles" class="display" data-source="<%= profiles_url(:format=>"json") %>">
+	<thead>
+  <tr>
+  	 <th>   </th>
+    <th>Traveller </th>
+    <th>Looking for</th>
+    <th>Birthday</th>
+    <th>About</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @profiles.each do |profile| %>
+  <tr>
+<td><%=link_to image_tag(profile.photo.url(:thumb)),profile %></td>
+    <td><%=link_to profile.name,profile %></td>
+    <td><%= profile.looking_for %></td>
+    <td><%= profile.birthday %></td>
+    <td><%= profile.about %></td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<br />
+<% if logged_in?%>
+<% if current_user.profile.blank?%>
+
+<%= link_to 'New Profile', new_profile_path %>
+<% end %>
+<% end %>

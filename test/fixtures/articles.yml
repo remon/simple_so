@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: remon@yahoo.com
+  title: "welcome to rails"
+  body: "Rails is such a nice web framework written in Ruby"
+
